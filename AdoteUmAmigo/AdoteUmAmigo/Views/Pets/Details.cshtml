@@ -1,0 +1,49 @@
+﻿@model AdoteUmAmigo.Models.Pet
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Contato</h2>
+
+<div>
+    <h4>Dados do Doador</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeDoDoador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeDoDoador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>              
+
+    </dl>
+</div>
+<p>    
+    @Html.ActionLink("Voltar", "IndexHome")
+</p>

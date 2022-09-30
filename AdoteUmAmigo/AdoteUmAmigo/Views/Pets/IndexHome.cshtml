@@ -1,0 +1,53 @@
+﻿@model IEnumerable<AdoteUmAmigo.Models.Pet>
+
+@{
+    ViewBag.Title = "IndexHome";
+}
+
+<h2>Adote Um Amigo</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Foto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Especie.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeDoPet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>        
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </th>               
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="@item.Foto" border="0" width="200px" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Especie.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeDoPet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>     
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Cidade)
+        </td>                
+        <td>           
+            @Html.ActionLink("Contatar Doador", "Details", new { id=item.PetId })            
+        </td>
+    </tr>
+}
+
+</table>
